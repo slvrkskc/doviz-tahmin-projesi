@@ -14,9 +14,10 @@ row = {
 
 try:
     df = pd.read_csv("kur_verisi.csv")
+    df = df[df["date"] != today]  # bugune ait eski kaydi sil (varsa)
     df = pd.concat([df, pd.DataFrame([row])], ignore_index=True)
 except FileNotFoundError:
     df = pd.DataFrame([row])
 
 df.to_csv("kur_verisi.csv", index=False)
-print(f"{today} tarihli veri eklendi:", row)
+print(f"{today} tarihli veri guncellendi:", row)
