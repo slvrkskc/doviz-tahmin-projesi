@@ -32,3 +32,4 @@ plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.savefig("kur_grafigi.png", dpi=150)
 plt.show()
 print("Grafik kaydedildi: kur_grafigi.png")
+##
